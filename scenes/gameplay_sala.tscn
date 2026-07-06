@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dkvejdliswgii"]
+
+[ext_resource type="Texture2D" uid="uid://bwcsp7ovupcnj" path="res://assets/scienza jam cena salao.png" id="1_4onw8"]
+[ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_csjvw"]
+[ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="1_hdw4o"]
+
+[node name="Node2D" type="Node2D" unique_id=1756217361 node_paths=PackedStringArray("horario_label")]
+script = ExtResource("1_csjvw")
+horario_label = NodePath("LabelHorario")
+
+[node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
+modulate = Color(1, 1, 1, 0.38039216)
+position = Vector2(669, 295)
+texture = ExtResource("1_4onw8")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=536366719]
+
+[node name="SpriteInicialJogador" type="Sprite2D" parent="." unique_id=43203524]
+
+[node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
+
+[node name="ItemSelecionavel" parent="ItensSelecionaveis" unique_id=1860087334 instance=ExtResource("1_hdw4o")]
+position = Vector2(455, 501)
+
+[node name="ItemSelecionavel2" parent="ItensSelecionaveis" unique_id=1326175262 instance=ExtResource("1_hdw4o")]
+position = Vector2(1029, 519)
+
+[node name="ItemSelecionavel3" parent="ItensSelecionaveis" unique_id=350136880 instance=ExtResource("1_hdw4o")]
+position = Vector2(186, 277)
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=202607461]
+
+[node name="TimerGeral" type="Timer" parent="." unique_id=1233236990]
+
+[node name="TimerTarefas" type="Timer" parent="." unique_id=286273628]
+
+[node name="LabelHorario" type="Label" parent="." unique_id=822811344]
+offset_left = 85.0
+offset_top = 13.0
+offset_right = 213.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 40
+text = "08:00h"
