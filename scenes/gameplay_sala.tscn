@@ -41,3 +41,10 @@ offset_right = 213.0
 offset_bottom = 68.0
 theme_override_font_sizes/font_size = 40
 text = "08:00h"
+
+[node name="TimerRelogio" type="Timer" parent="." unique_id=1571522872]
+wait_time = 30.0
+
+[connection signal="timeout" from="TimerGeral" to="." method="_on_timer_geral_timeout"]
+[connection signal="timeout" from="TimerTarefas" to="." method="_on_timer_tarefas_timeout"]
+[connection signal="timeout" from="TimerRelogio" to="." method="_on_timer_relogio_timeout"]
