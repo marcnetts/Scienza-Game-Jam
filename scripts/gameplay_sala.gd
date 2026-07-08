@@ -44,6 +44,8 @@ func _on_timer_relogio_timeout() -> void:
 
 func _on_timer_geral_timeout() -> void:
 	print('parando o jogo')
+	if timer_relogio.time_left < 0.1:
+		timer_relogio.timeout.emit()
 	parar_todos_timers()
 
 func _on_timer_tarefas_timeout() -> void:
