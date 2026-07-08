@@ -3,10 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bwcsp7ovupcnj" path="res://assets/scienza jam cena salao.png" id="1_4onw8"]
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_csjvw"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="1_hdw4o"]
+[ext_resource type="Texture2D" uid="uid://damxydfeq6fjs" path="res://icon.svg" id="4_hhn5h"]
 
 [node name="Node2D" type="Node2D" unique_id=1756217361 node_paths=PackedStringArray("horario_label")]
 script = ExtResource("1_csjvw")
 horario_label = NodePath("LabelHorario")
+ids_itens_ja_selecionaveis = Array[int]([1])
 
 [node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
 modulate = Color(1, 1, 1, 0.38039216)
@@ -15,7 +17,11 @@ texture = ExtResource("1_4onw8")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=536366719]
 
-[node name="SpriteInicialJogador" type="Sprite2D" parent="." unique_id=43203524]
+[node name="SpriteInicialJogador" type="Sprite2D" parent="." unique_id=601415446]
+modulate = Color(0.32270914, 0.770725, 0.22313628, 1)
+position = Vector2(731, 334)
+scale = Vector2(0.921875, 2.0078125)
+texture = ExtResource("4_hhn5h")
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
@@ -33,6 +39,7 @@ position = Vector2(186, 277)
 [node name="TimerGeral" type="Timer" parent="." unique_id=1233236990]
 
 [node name="TimerTarefas" type="Timer" parent="." unique_id=286273628]
+wait_time = 7.0
 
 [node name="LabelHorario" type="Label" parent="." unique_id=822811344]
 offset_left = 85.0

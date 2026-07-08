@@ -4,10 +4,12 @@ extends Area2D
 @export var sprite_acao: Texture2D
 @export var nome_acao: String = "limpando" #mandar string ou id de index por ação?
 @export var tempo_limpeza: float = 3.0
+@export var segundos_timer_item_nao_selectionavel: float = 15.0
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var colisao: CollisionShape2D = $CollisionShape2D
 @onready var barra_progresso: TextureProgressBar = $TextureProgressBar
+@onready var timer_item_nao_selecionavel: Timer = $TimerItemNaoSelecionavel
 
 signal tarefa_concluida
 signal jogador_interagindo(interagindo, acao)
@@ -26,8 +28,6 @@ func _ready():
 	barra_progresso.position.y -= (sprite.texture.get_size().y / 2) + 20
 	barra_progresso.visible = false
 	barra_progresso.max_value = tempo_limpeza
-	
-	sujar() #mandar lógica para a cena depois?
 
 func _process(delta):
 	if is_precisa_interagir and is_mouse_por_cima and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -63,6 +63,8 @@ func concluir_limpeza():
 	sprite.texture = sprite_inicial
 	sprite.modulate = Color.WHITE #mudar para glow depois
 	tarefa_concluida.emit()
+	timer_item_nao_selecionavel.start(segundos_timer_item_nao_selectionavel)
+	print(timer_item_nao_selecionavel.is_stopped())
 
 func _on_mouse_entered():
 	is_mouse_por_cima = true

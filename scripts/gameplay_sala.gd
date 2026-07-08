@@ -4,8 +4,9 @@ extends Node2D
 @export_range(0, 12) var relogio_hora = 8
 @export_range(0, 30, 30) var relogio_minuto = 0
 @export var horario_label: Label
-@export var segundos_mudar_horario = 30
-@export var nivel_atual = 1 #todo
+@export var segundos_mudar_horario: float = 30.0
+@export var nivel_atual: int = 1 #todo
+@export var is_continuar_sujando_final_jogo: bool = false
 
 @onready var itens_selecionaveis: Array[Node] = $ItensSelecionaveis.get_children()
 @export var ids_itens_ja_selecionaveis: Array[int] = []
@@ -44,8 +45,10 @@ func _on_timer_geral_timeout() -> void:
 	parar_todos_timers()
 
 func _on_timer_tarefas_timeout() -> void:
-	#criar delay para item ser selecionavel novamente?
-	var itens_sem_acao = itens_selecionaveis.filter(func(item): return not item.is_precisa_interagir)
-	print(itens_sem_acao)
+	var itens_sem_acao = itens_selecionaveis.filter(func(item): return (
+		not item.is_precisa_interagir
+		and item.timer_item_nao_selecionavel.is_stopped()
+		and (is_continuar_sujando_final_jogo or (timer_geral.time_left > item.tempo_limpeza + 1.5))
+	))
 	if itens_sem_acao.size() > 0:
 		itens_sem_acao.pick_random().sujar()
