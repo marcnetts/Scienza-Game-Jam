@@ -8,7 +8,7 @@ extends Node2D
 @export var nivel_atual: int = 1 #todo
 @export var is_continuar_sujando_final_jogo: bool = false
 
-@onready var itens_selecionaveis: Array[Node] = $ItensSelecionaveis.get_children()
+@onready var itens_selecionaveis: Array[ItemSelecionavel]
 @export var ids_itens_ja_selecionaveis: Array[int] = []
 
 @onready var timer_geral: Timer = $TimerGeral
@@ -20,6 +20,8 @@ func _ready():
 	timer_geral.start(tempo_de_jogo)
 	timer_relogio.start(segundos_mudar_horario)
 	timer_sujeira.start()
+	for child in $ItensSelecionaveis.get_children():
+		if is_instance_of(child, ItemSelecionavel): itens_selecionaveis.append(child)
 	for id in ids_itens_ja_selecionaveis:
 		itens_selecionaveis[id].sujar()
 

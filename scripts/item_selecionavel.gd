@@ -1,3 +1,4 @@
+class_name ItemSelecionavel 
 extends Area2D
 
 @export var sprite_inicial: Texture2D
