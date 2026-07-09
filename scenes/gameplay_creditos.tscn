@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bpmxd6u3j5ndc"]
+
+[ext_resource type="Script" uid="uid://6hj64yby8ka7" path="res://scripts/menu_principal.gd" id="1_7rhxs"]
+[ext_resource type="Texture2D" uid="uid://bwcsp7ovupcnj" path="res://assets/scienza jam cena salao.png" id="2_bry4a"]
+
+[node name="MenuCreditos" type="Control" unique_id=226209167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7rhxs")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1876568022]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="Sprite2D" parent="AspectRatioContainer" unique_id=1315327185]
+texture = ExtResource("2_bry4a")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1941428190]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.5
+offset_top = -238.0
+offset_right = 337.5
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "\"Um Dia Para Sonhar\"
+Entrada da [color=lightblue]Scienza Game Jam 2026[/color]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=751729909]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -433.0
+offset_top = 244.0
+offset_right = 433.0
+offset_bottom = 496.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Criado Por
+- [color=lightblue]Daeana Bourscheid[/color]: Pesquisa e Mentoria
+- [color=lightblue]Fabiana Montesanti[/color]: Game Design
+- [color=lightblue]Marcos Zanetti[/color]: Programação
+- [color=lightblue]João Aquino[/color]: Programação
+- [color=lightblue]Victoria Motta[/color]: Arte"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="ButtonVoltar" type="Button" parent="." unique_id=272793230]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = 209.0
+offset_right = 89.5
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "VOLTAR"
+
+[connection signal="pressed" from="ButtonVoltar" to="." method="_on_button_voltar_pressed"]

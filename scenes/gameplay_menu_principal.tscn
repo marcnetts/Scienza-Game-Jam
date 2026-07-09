@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://yj2ltqdo66f3"]
+
+[ext_resource type="Texture2D" uid="uid://bwcsp7ovupcnj" path="res://assets/scienza jam cena salao.png" id="1_i85hu"]
+[ext_resource type="Script" uid="uid://6hj64yby8ka7" path="res://scripts/menu_principal.gd" id="1_mk4g1"]
+
+[node name="MenuPrincipal" type="Control" unique_id=226209167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mk4g1")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1876568022]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="Sprite2D" parent="AspectRatioContainer" unique_id=1315327185]
+texture = ExtResource("1_i85hu")
+
+[node name="ButtonComeçar" type="Button" parent="." unique_id=989603119]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = 24.0
+offset_right = 89.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "COMEÇAR"
+
+[node name="ButtonSobre" type="Button" parent="." unique_id=946274435]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = 119.0
+offset_right = 89.5
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "SOBRE"
+
+[node name="ButtonCreditos" type="Button" parent="." unique_id=1390609593]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = 209.0
+offset_right = 89.5
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "CRÉDITOS"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1941428190]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.5
+offset_top = -221.0
+offset_right = 340.5
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 70
+text = "Um Dia Para Sonhar"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ButtonComeçar" to="." method="_on_button_começar_pressed"]
+[connection signal="pressed" from="ButtonCreditos" to="." method="_on_button_creditos_pressed"]

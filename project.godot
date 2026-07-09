@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Scienza Game Jam"
-run/main_scene="uid://dkvejdliswgii"
+run/main_scene="uid://yj2ltqdo66f3"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
