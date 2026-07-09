@@ -1,9 +1,8 @@
 extends Node2D
 
 @export var tempo_de_jogo: float = 60.0
-@export_range(0, 12) var relogio_hora = 8
+@export_range(0, 23) var relogio_hora = 8
 @export_range(0, 30, 30) var relogio_minuto = 0
-@export var horario_label: Label
 @export var segundos_mudar_horario: float = 30.0
 @export var nivel_atual: int = 1 #todo
 @export var is_continuar_sujando_final_jogo: bool = false
@@ -16,6 +15,10 @@ extends Node2D
 @onready var timer_relogio: Timer = $TimerRelogio
 @onready var timer_sujeira: Timer = $TimerTarefas
 @onready var jogador: Jogador = $Jogador
+@onready var label_horario: RichTextLabel = $Interface/LabelHorario
+@onready var label_dica: RichTextLabel = $Interface/LabelDica
+
+var interagiu_primeira_vez: bool = false
 
 func _ready():
 	timer_geral.start(tempo_de_jogo)
@@ -24,6 +27,7 @@ func _ready():
 	for child in $ItensSelecionaveis.get_children():
 		if is_instance_of(child, ItemSelecionavel):
 			child.jogador_falando.connect(falar_jogador)
+			child.tarefa_concluida.connect(validar_interacao_jogador)
 			itens_selecionaveis.append(child)
 	for child in $ItensSempreSelecionaveis.get_children():
 		if is_instance_of(child, ItemSelecionavel):
@@ -32,7 +36,7 @@ func _ready():
 		itens_selecionaveis[id].sujar()
 	falar_jogador('Exemplo de fala')
 
-func parar_todos_timers():
+func pausar_todos_timers():
 	timer_geral.paused = true
 	timer_relogio.paused = true
 	timer_sujeira.paused = true
@@ -45,18 +49,21 @@ func resumir_todos_timers():
 func falar_jogador(fala: String):
 	jogador.mostrar_fala(fala)
 
+func validar_interacao_jogador():
+	label_dica.visible = false
+
 func _on_timer_relogio_timeout() -> void:
 	relogio_minuto += 30
 	if relogio_minuto == 60:
 		relogio_minuto = 0
 		relogio_hora = wrapi(relogio_hora + 1, 0, 24)
-	horario_label.text = "%02d:%02dh" % [relogio_hora, relogio_minuto]
+	label_horario.text = "%02d:%02dh" % [relogio_hora, relogio_minuto]
 
 func _on_timer_geral_timeout() -> void:
 	falar_jogador('parando o jogo')
 	if timer_relogio.time_left < 0.1:
 		timer_relogio.timeout.emit()
-	parar_todos_timers()
+	pausar_todos_timers()
 
 func _on_timer_tarefas_timeout() -> void:
 	var itens_sem_acao = itens_selecionaveis.filter(func(item): return (
