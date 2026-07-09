@@ -25,11 +25,6 @@ position = Vector2(729, 348)
 [node name="ItemSelecionavel" parent="ItensSelecionaveis" unique_id=1860087334 instance=ExtResource("1_hdw4o")]
 position = Vector2(455, 501)
 
-[node name="ItemSelecionavel4" parent="ItensSelecionaveis" unique_id=424156609 instance=ExtResource("1_hdw4o")]
-position = Vector2(24, 175)
-tempo_limpeza = 0.0
-fala_personagem = "Como o tempo está bonito lá fora..."
-
 [node name="ItemSelecionavel2" parent="ItensSelecionaveis" unique_id=1326175262 instance=ExtResource("1_hdw4o")]
 position = Vector2(1029, 519)
 
@@ -53,6 +48,14 @@ text = "08:00h"
 
 [node name="TimerRelogio" type="Timer" parent="." unique_id=1571522872]
 wait_time = 30.0
+
+[node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
+
+[node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=424156609 instance=ExtResource("1_hdw4o")]
+position = Vector2(24, 175)
+tempo_limpeza = 0.0
+fala_personagem = "Como o tempo está bonito lá fora..."
+sempre_selecionavel = true
 
 [connection signal="timeout" from="TimerGeral" to="." method="_on_timer_geral_timeout"]
 [connection signal="timeout" from="TimerTarefas" to="." method="_on_timer_tarefas_timeout"]

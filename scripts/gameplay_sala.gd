@@ -9,6 +9,7 @@ extends Node2D
 @export var is_continuar_sujando_final_jogo: bool = false
 
 @onready var itens_selecionaveis: Array[ItemSelecionavel]
+@onready var itens_sempre_selecionaveis: Array[ItemSelecionavel]
 @export var ids_itens_ja_selecionaveis: Array[int] = []
 
 @onready var timer_geral: Timer = $TimerGeral
@@ -24,6 +25,9 @@ func _ready():
 		if is_instance_of(child, ItemSelecionavel):
 			child.jogador_falando.connect(falar_jogador)
 			itens_selecionaveis.append(child)
+	for child in $ItensSempreSelecionaveis.get_children():
+		if is_instance_of(child, ItemSelecionavel):
+			child.jogador_falando.connect(falar_jogador)
 	for id in ids_itens_ja_selecionaveis:
 		itens_selecionaveis[id].sujar()
 	falar_jogador('Exemplo de fala')

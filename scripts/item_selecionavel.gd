@@ -7,7 +7,7 @@ extends Area2D
 @export var tempo_limpeza: float = 3.0
 @export var segundos_timer_item_nao_selectionavel: float = 15.0
 @export var fala_personagem: String
-@export var precisa_segurar_mouse: bool = true
+@export var sempre_selecionavel: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var colisao: CollisionShape2D = $CollisionShape2D
@@ -34,6 +34,8 @@ func _ready():
 	barra_progresso.max_value = tempo_limpeza
 
 func _process(delta):
+	if not is_precisa_interagir and sempre_selecionavel:
+		sujar()
 	if is_precisa_interagir and is_mouse_por_cima and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		avancar_limpeza(delta)
 	else:
