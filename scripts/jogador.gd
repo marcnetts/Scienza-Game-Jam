@@ -4,10 +4,13 @@ extends Node2D
 @onready var sprite_jogador: Sprite2D = $SpriteJogador
 @onready var balao_fala: BalaoFala = $Fala
 var posicao_inicial: Vector2
-var sprite_inicial: Texture2D
+@export var sprite_inicial: Texture2D
 
 func _ready():
 	posicao_inicial = self.position
+	if sprite_inicial:
+		mudar_sprite(sprite_inicial)
+		sprite_jogador.modulate = Color.WHITE
 	sprite_inicial = sprite_jogador.texture
 
 func mudar_posicao(posicao: Vector2):
