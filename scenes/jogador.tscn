@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://3pp2wwiu5hox"]
+
+[ext_resource type="Script" uid="uid://tticwgllrip2" path="res://scripts/jogador.gd" id="1_uahlj"]
+[ext_resource type="Texture2D" uid="uid://damxydfeq6fjs" path="res://icon.svg" id="2_g1ob3"]
+[ext_resource type="PackedScene" uid="uid://cv84oracqhrpo" path="res://scenes/balao_fala.tscn" id="3_g1ob3"]
+
+[node name="Jogador" type="Node2D" unique_id=193595288]
+script = ExtResource("1_uahlj")
+
+[node name="SpriteJogador" type="Sprite2D" parent="." unique_id=1309654919]
+modulate = Color(0.32270914, 0.770725, 0.22313628, 1)
+scale = Vector2(0.921875, 2.0078125)
+texture = ExtResource("2_g1ob3")
+
+[node name="Fala" parent="." unique_id=1468018057 instance=ExtResource("3_g1ob3")]
+offset_left = 0.0
+offset_top = -150.0
+offset_right = 1.0
+offset_bottom = -150.0

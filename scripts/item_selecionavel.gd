@@ -6,6 +6,8 @@ extends Area2D
 @export var nome_acao: String = "limpando" #mandar string ou id de index por ação?
 @export var tempo_limpeza: float = 3.0
 @export var segundos_timer_item_nao_selectionavel: float = 15.0
+@export var fala_personagem: String
+@export var precisa_segurar_mouse: bool = true
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var colisao: CollisionShape2D = $CollisionShape2D
@@ -13,6 +15,7 @@ extends Area2D
 @onready var timer_item_nao_selecionavel: Timer = $TimerItemNaoSelecionavel
 
 signal tarefa_concluida
+signal jogador_falando(fala)
 signal jogador_interagindo(interagindo, acao)
 
 var is_precisa_interagir: bool = false
@@ -52,6 +55,9 @@ func avancar_limpeza(delta):
 	if progresso_atual >= tempo_limpeza:
 		concluir_limpeza()
 
+	if fala_personagem:
+		jogador_falando.emit(fala_personagem)
+
 func parar_limpeza():
 	barra_progresso.visible = false
 	progresso_atual = 0
@@ -65,7 +71,6 @@ func concluir_limpeza():
 	sprite.modulate = Color.WHITE #mudar para glow depois
 	tarefa_concluida.emit()
 	timer_item_nao_selecionavel.start(segundos_timer_item_nao_selectionavel)
-	print(timer_item_nao_selecionavel.is_stopped())
 
 func _on_mouse_entered():
 	is_mouse_por_cima = true

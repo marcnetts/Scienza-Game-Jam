@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwcsp7ovupcnj" path="res://assets/scienza jam cena salao.png" id="1_4onw8"]
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_csjvw"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="1_hdw4o"]
-[ext_resource type="Texture2D" uid="uid://damxydfeq6fjs" path="res://icon.svg" id="4_hhn5h"]
+[ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="4_hhn5h"]
 
 [node name="Node2D" type="Node2D" unique_id=1756217361 node_paths=PackedStringArray("horario_label")]
 script = ExtResource("1_csjvw")
@@ -17,16 +17,18 @@ texture = ExtResource("1_4onw8")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=536366719]
 
-[node name="SpriteInicialJogador" type="Sprite2D" parent="." unique_id=601415446]
-modulate = Color(0.32270914, 0.770725, 0.22313628, 1)
-position = Vector2(731, 334)
-scale = Vector2(0.921875, 2.0078125)
-texture = ExtResource("4_hhn5h")
+[node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("4_hhn5h")]
+position = Vector2(729, 348)
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
 [node name="ItemSelecionavel" parent="ItensSelecionaveis" unique_id=1860087334 instance=ExtResource("1_hdw4o")]
 position = Vector2(455, 501)
+
+[node name="ItemSelecionavel4" parent="ItensSelecionaveis" unique_id=424156609 instance=ExtResource("1_hdw4o")]
+position = Vector2(24, 175)
+tempo_limpeza = 0.0
+fala_personagem = "Como o tempo está bonito lá fora..."
 
 [node name="ItemSelecionavel2" parent="ItensSelecionaveis" unique_id=1326175262 instance=ExtResource("1_hdw4o")]
 position = Vector2(1029, 519)

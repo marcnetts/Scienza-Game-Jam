@@ -14,16 +14,19 @@ extends Node2D
 @onready var timer_geral: Timer = $TimerGeral
 @onready var timer_relogio: Timer = $TimerRelogio
 @onready var timer_sujeira: Timer = $TimerTarefas
-@onready var sprite_jogador: Sprite2D = $SpriteInicialJogador #criar um estado?
+@onready var jogador: Jogador = $Jogador
 
 func _ready():
 	timer_geral.start(tempo_de_jogo)
 	timer_relogio.start(segundos_mudar_horario)
 	timer_sujeira.start()
 	for child in $ItensSelecionaveis.get_children():
-		if is_instance_of(child, ItemSelecionavel): itens_selecionaveis.append(child)
+		if is_instance_of(child, ItemSelecionavel):
+			child.jogador_falando.connect(falar_jogador)
+			itens_selecionaveis.append(child)
 	for id in ids_itens_ja_selecionaveis:
 		itens_selecionaveis[id].sujar()
+	falar_jogador('Exemplo de fala')
 
 func parar_todos_timers():
 	timer_geral.paused = true
@@ -35,6 +38,9 @@ func resumir_todos_timers():
 	timer_relogio.paused = false
 	timer_sujeira.paused = false
 
+func falar_jogador(fala: String):
+	jogador.mostrar_fala(fala)
+
 func _on_timer_relogio_timeout() -> void:
 	relogio_minuto += 30
 	if relogio_minuto == 60:
@@ -43,7 +49,7 @@ func _on_timer_relogio_timeout() -> void:
 	horario_label.text = "%02d:%02dh" % [relogio_hora, relogio_minuto]
 
 func _on_timer_geral_timeout() -> void:
-	print('parando o jogo')
+	falar_jogador('parando o jogo')
 	if timer_relogio.time_left < 0.1:
 		timer_relogio.timeout.emit()
 	parar_todos_timers()
