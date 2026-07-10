@@ -18,15 +18,26 @@ var itens_sempre_selecionaveis: Array[ItemSelecionavel]
 @onready var jogador: Jogador = $Jogador
 @onready var label_horario: RichTextLabel = $Interface/LabelHorario
 @onready var label_dica: RichTextLabel = $Interface/LabelDica
+@onready var transicao_cena: ColorRect = $Interface/TransicaoCena
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var interagiu_primeira_vez: bool = false
 
 func _ready():
+	if transicao_cena and animation_player:
+		animation_player.play("fade_out_black")
+		animation_player.advance(0)
+		transicao_cena.visible = true
+		await animation_player.animation_finished
+		transicao_cena.visible = false
+	
 	if(tempo_de_jogo):
 		timer_geral.start(tempo_de_jogo)
 	if(segundos_mudar_horario):
 		timer_relogio.start(segundos_mudar_horario)
-	timer_sujeira.start()
+	if timer_sujeira:
+		timer_sujeira.start()
+	
 	for child in $ItensSelecionaveis.get_children():
 		if is_instance_of(child, ItemSelecionavel):
 			child.jogador_falando.connect(falar_jogador)
@@ -37,6 +48,7 @@ func _ready():
 			child.jogador_falando.connect(falar_jogador)
 	for id in ids_itens_ja_selecionaveis:
 		itens_selecionaveis[id].sujar()
+	
 	if fala_inicial:
 		falar_jogador(fala_inicial)
 
@@ -79,4 +91,8 @@ func _on_timer_tarefas_timeout() -> void:
 		itens_sem_acao.pick_random().sujar()
 
 func _on_button_proxima_cena_pressed(cena: String) -> void:
+	if transicao_cena and animation_player:
+		transicao_cena.visible = true
+		animation_player.play("fade_in_black")
+		await animation_player.animation_finished
 	get_tree().change_scene_to_file("res://scenes/%s.tscn" % cena)

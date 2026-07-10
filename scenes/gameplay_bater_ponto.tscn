@@ -1,10 +1,7 @@
-[gd_scene format=3 uid="uid://bw2sq0tnse3sr"]
+[gd_scene format=3 uid="uid://dovwbfs53tqku"]
 
-[ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_15jde"]
-[ext_resource type="Texture2D" uid="uid://dypeupapblqmy" path="res://assets/ônibus.png" id="2_7frf5"]
-[ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_ghfb8"]
-[ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_5h207"]
-[ext_resource type="Script" uid="uid://8c5rfqdt2go6" path="res://scripts/camera_tremida.gd" id="5_7frf5"]
+[ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_c37t1"]
+[ext_resource type="Texture2D" uid="uid://brnbqy64cajis" path="res://assets/cenario principal.png" id="2_2g771"]
 
 [sub_resource type="Animation" id="Animation_7frf5"]
 length = 0.001
@@ -60,16 +57,15 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D" unique_id=1756217361]
-script = ExtResource("1_15jde")
+script = ExtResource("1_c37t1")
 tempo_de_jogo = 0.0
 relogio_hora = 6
 segundos_mudar_horario = 0.0
-fala_inicial = "Vamos para mais um dia."
 
 [node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
 position = Vector2(576.00006, 325.00003)
 scale = Vector2(0.8004144, 0.5957643)
-texture = ExtResource("2_7frf5")
+texture = ExtResource("2_2g771")
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=202607461]
 
@@ -79,7 +75,7 @@ offset_top = 13.0
 offset_right = 213.0
 offset_bottom = 68.0
 theme_override_font_sizes/normal_font_size = 40
-text = "06:00h"
+text = "07:55h"
 fit_content = true
 
 [node name="ButtonProximaCena" type="Button" parent="Interface" unique_id=14392321]
@@ -107,40 +103,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_ghfb8")]
-position = Vector2(341, 348)
-
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
 [node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
 
-[node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=424156609 instance=ExtResource("4_5h207")]
-position = Vector2(113, 406)
-tempo_limpeza = 0.0
-segundos_timer_item_nao_selectionavel = 0.0
-fala_personagem = "Que cheiro..."
-sempre_selecionavel = true
-
-[node name="ItemSelecionavel" parent="ItensSempreSelecionaveis" unique_id=1860087334 instance=ExtResource("4_5h207")]
-position = Vector2(796, 543)
-tempo_limpeza = 0.0
-segundos_timer_item_nao_selectionavel = 0.0
-fala_personagem = "Não vão dar lugar para a senhora?"
-sempre_selecionavel = true
-
-[node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_5h207")]
-position = Vector2(671, 259)
-tempo_limpeza = 0.0
-segundos_timer_item_nao_selectionavel = 0.0
-fala_personagem = "Ainda bem escuro."
-sempre_selecionavel = true
-
-[node name="CameraTremida" type="Camera2D" parent="." unique_id=1570109313]
-position = Vector2(574.141, 322)
-scale = Vector2(0.34854344, 0.26441598)
-script = ExtResource("5_7frf5")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=328282900]
 libraries/ = SubResource("AnimationLibrary_clggk")
 
-[connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_bater_ponto"]]
+[connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_sala"]]
