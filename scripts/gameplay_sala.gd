@@ -6,6 +6,7 @@ extends Node2D
 @export var segundos_mudar_horario: float = 30.0
 @export var nivel_atual: int = 1 #todo
 @export var is_continuar_sujando_final_jogo: bool = false
+@export var fala_inicial: String
 
 var itens_selecionaveis: Array[ItemSelecionavel]
 var itens_sempre_selecionaveis: Array[ItemSelecionavel]
@@ -36,6 +37,8 @@ func _ready():
 			child.jogador_falando.connect(falar_jogador)
 	for id in ids_itens_ja_selecionaveis:
 		itens_selecionaveis[id].sujar()
+	if fala_inicial:
+		falar_jogador(fala_inicial)
 
 func pausar_todos_timers():
 	timer_geral.paused = true

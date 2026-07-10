@@ -11,6 +11,7 @@ script = ExtResource("1_15jde")
 tempo_de_jogo = 0.0
 relogio_hora = 6
 segundos_mudar_horario = 0.0
+fala_inicial = "Vamos para mais um dia."
 
 [node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
 position = Vector2(576.00006, 325.00003)
@@ -57,30 +58,29 @@ wait_time = 7.0
 wait_time = 30.0
 
 [node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
-position = Vector2(0, 23)
 
 [node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=424156609 instance=ExtResource("4_5h207")]
-position = Vector2(113, 383)
+position = Vector2(113, 406)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Que cheiro..."
 sempre_selecionavel = true
 
 [node name="ItemSelecionavel" parent="ItensSempreSelecionaveis" unique_id=1860087334 instance=ExtResource("4_5h207")]
-position = Vector2(796, 520)
+position = Vector2(796, 543)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Não vão dar lugar para a senhora?"
 sempre_selecionavel = true
 
 [node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_5h207")]
-position = Vector2(671, 236)
+position = Vector2(671, 259)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Ainda bem escuro."
 sempre_selecionavel = true
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1570109313]
+[node name="CameraTremida" type="Camera2D" parent="." unique_id=1570109313]
 position = Vector2(574.141, 322)
 scale = Vector2(0.34854344, 0.26441598)
 script = ExtResource("5_7frf5")

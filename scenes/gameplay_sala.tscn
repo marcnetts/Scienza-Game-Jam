@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwcsp7ovupcnj" path="res://assets/scienza jam cena salao.png" id="1_4onw8"]
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_csjvw"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="1_hdw4o"]
+[ext_resource type="Texture2D" uid="uid://damxydfeq6fjs" path="res://icon.svg" id="4_608sb"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="4_hhn5h"]
 
 [node name="Node2D" type="Node2D" unique_id=1756217361]
@@ -18,6 +19,7 @@ texture = ExtResource("1_4onw8")
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("4_hhn5h")]
 position = Vector2(729, 348)
+sprite_inicial = ExtResource("4_608sb")
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
@@ -45,7 +47,7 @@ offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 22
-text = "Segure o Mouse nas tarefas disponíveis para as completar."
+text = "Toque e segure nas tarefas disponíveis para as completar."
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -68,10 +70,9 @@ wait_time = 7.0
 wait_time = 30.0
 
 [node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
-position = Vector2(0, 23)
 
 [node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=424156609 instance=ExtResource("1_hdw4o")]
-position = Vector2(24, 175)
+position = Vector2(24, 198)
 tempo_limpeza = 0.0
 fala_personagem = "Como o tempo está bonito lá fora..."
 sempre_selecionavel = true
