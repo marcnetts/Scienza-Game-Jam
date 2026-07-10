@@ -36,10 +36,11 @@ func _ready():
 func _process(delta):
 	if not is_precisa_interagir and sempre_selecionavel:
 		sujar()
-	if is_precisa_interagir and is_mouse_por_cima and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		avancar_limpeza(delta)
-	else:
-		parar_limpeza()
+	if is_precisa_interagir:
+		if is_mouse_por_cima and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			avancar_limpeza(delta)
+		else:
+			parar_limpeza()
 
 func sujar():
 	is_precisa_interagir = true

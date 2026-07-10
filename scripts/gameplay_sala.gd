@@ -22,6 +22,8 @@ var itens_sempre_selecionaveis: Array[ItemSelecionavel]
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var interagiu_primeira_vez: bool = false
+signal gameplay_comecou
+signal tarefa_concluida
 signal gameplay_terminou
 
 func _ready():
@@ -52,6 +54,8 @@ func _ready():
 	
 	if fala_inicial:
 		falar_jogador(fala_inicial)
+	
+	gameplay_comecou.emit()
 
 func pausar_todos_timers():
 	timer_geral.paused = true
@@ -67,6 +71,7 @@ func falar_jogador(fala: String):
 	jogador.mostrar_fala(fala)
 
 func validar_interacao_jogador():
+	tarefa_concluida.emit()
 	label_dica.visible = false
 
 func _on_timer_relogio_timeout() -> void:
@@ -77,9 +82,10 @@ func _on_timer_relogio_timeout() -> void:
 	label_horario.text = "%02d:%02dh" % [relogio_hora, relogio_minuto]
 
 func _on_timer_geral_timeout() -> void:
-	falar_jogador('parando o jogo')
 	if timer_relogio.time_left < 0.1:
 		timer_relogio.timeout.emit()
+	for item in itens_selecionaveis:
+		item.concluir_limpeza()
 	pausar_todos_timers()
 	gameplay_terminou.emit()
 

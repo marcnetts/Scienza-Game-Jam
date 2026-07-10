@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://ck44e2atu67vc"]
+
+[ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_n6ir7"]
+[ext_resource type="Texture2D" uid="uid://dq4rmhb04yd33" path="res://assets/cenario cozinha.png" id="2_gghsj"]
+[ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_eibfs"]
+[ext_resource type="Script" uid="uid://xkngnprtusp4" path="res://scripts/gameplay_add_cozinha.gd" id="5_e4vgo"]
+[ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="5_iwffe"]
+
+[sub_resource type="Animation" id="Animation_7frf5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interface/TransicaoCena:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Interface/ButtonProximaCena:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Interface/LabelHorario:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Interface/ButtonProximaCena:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Interface/LabelHorario:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ghfb8"]
+resource_name = "fade_in_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interface/TransicaoCena:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5h207"]
+resource_name = "fade_out_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interface/TransicaoCena:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e4vgo"]
+resource_name = "mostrar_interface_cozinha"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interface/ButtonProximaCena:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Interface/LabelHorario:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Interface/ButtonProximaCena:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Interface/LabelHorario:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_608sb"]
+_data = {
+&"RESET": SubResource("Animation_7frf5"),
+&"fade_in_black": SubResource("Animation_ghfb8"),
+&"fade_out_black": SubResource("Animation_5h207"),
+&"mostrar_interface_cozinha": SubResource("Animation_e4vgo")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1756217361]
+script = ExtResource("1_n6ir7")
+tempo_de_jogo = 0.0
+relogio_hora = 12
+segundos_mudar_horario = 0.0
+nivel_atual = 2
+is_continuar_sujando_final_jogo = true
+ids_itens_ja_selecionaveis = Array[int]([1])
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2022820869]
+position = Vector2(576.00006, 325.00003)
+scale = Vector2(0.8004144, 0.5957643)
+texture = ExtResource("2_gghsj")
+
+[node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
+
+[node name="ItemSelecionavel" parent="ItensSelecionaveis" unique_id=1860087334 instance=ExtResource("5_iwffe")]
+position = Vector2(633, 321)
+tempo_limpeza = 1.5
+segundos_timer_item_nao_selectionavel = 0.5
+
+[node name="ItemSelecionavel2" parent="ItensSelecionaveis" unique_id=1326175262 instance=ExtResource("5_iwffe")]
+position = Vector2(486, 440)
+tempo_limpeza = 1.5
+segundos_timer_item_nao_selectionavel = 0.5
+
+[node name="ItemSelecionavel3" parent="ItensSelecionaveis" unique_id=350136880 instance=ExtResource("5_iwffe")]
+position = Vector2(199, 509)
+tempo_limpeza = 1.5
+segundos_timer_item_nao_selectionavel = 0.5
+
+[node name="ItemSelecionavel4" parent="ItensSelecionaveis" unique_id=424156609 instance=ExtResource("5_iwffe")]
+position = Vector2(764, 146)
+tempo_limpeza = 1.0
+segundos_timer_item_nao_selectionavel = 10.0
+
+[node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_eibfs")]
+position = Vector2(769, 425)
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=202607461]
+
+[node name="LabelDica" type="RichTextLabel" parent="Interface" unique_id=180246131]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = -63.0
+offset_right = 216.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 22
+text = "Toque e segure nas tarefas disponíveis para as completar."
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelHorario" type="RichTextLabel" parent="Interface" unique_id=2071157458]
+visible = false
+offset_left = 85.0
+offset_top = 13.0
+offset_right = 213.0
+offset_bottom = 68.0
+theme_override_font_sizes/normal_font_size = 40
+text = "08:00h"
+
+[node name="TransicaoCena" type="ColorRect" parent="Interface" unique_id=1106750507]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonProximaCena" type="Button" parent="Interface" unique_id=388633883]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 355.0
+offset_top = 225.0
+offset_right = 545.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Próximo"
+
+[node name="TimerGeral" type="Timer" parent="." unique_id=1233236990]
+
+[node name="TimerTarefas" type="Timer" parent="." unique_id=286273628]
+wait_time = 7.0
+
+[node name="TimerRelogio" type="Timer" parent="." unique_id=1571522872]
+wait_time = 30.0
+
+[node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1433938951]
+libraries/ = SubResource("AnimationLibrary_608sb")
+
+[node name="GameplayAdicional" type="Node2D" parent="." unique_id=1826054273 node_paths=PackedStringArray("gameplay_node")]
+script = ExtResource("5_e4vgo")
+gameplay_node = NodePath("..")
+
+[connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_almoco"]]
+[connection signal="timeout" from="TimerGeral" to="." method="_on_timer_geral_timeout"]
+[connection signal="timeout" from="TimerTarefas" to="." method="_on_timer_tarefas_timeout"]
+[connection signal="timeout" from="TimerRelogio" to="." method="_on_timer_relogio_timeout"]

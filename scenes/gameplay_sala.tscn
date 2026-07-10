@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bwcsp7ovupcnj" path="res://assets/scienza jam cena salao.png" id="1_4onw8"]
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_csjvw"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="1_hdw4o"]
-[ext_resource type="Texture2D" uid="uid://damxydfeq6fjs" path="res://icon.svg" id="4_608sb"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="4_hhn5h"]
 [ext_resource type="Script" uid="uid://cp1yp08tn4vi1" path="res://scripts/gameplay_add_sala.gd" id="6_t254f"]
 
@@ -75,7 +74,6 @@ texture = ExtResource("1_4onw8")
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("4_hhn5h")]
 position = Vector2(729, 348)
-sprite_inicial = ExtResource("4_608sb")
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
