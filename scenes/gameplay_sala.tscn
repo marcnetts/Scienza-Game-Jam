@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="1_hdw4o"]
 [ext_resource type="Texture2D" uid="uid://damxydfeq6fjs" path="res://icon.svg" id="4_608sb"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="4_hhn5h"]
+[ext_resource type="Script" uid="uid://cp1yp08tn4vi1" path="res://scripts/gameplay_add_sala.gd" id="6_t254f"]
 
 [sub_resource type="Animation" id="Animation_7frf5"]
 length = 0.001
@@ -61,6 +62,8 @@ _data = {
 
 [node name="Node2D" type="Node2D" unique_id=1756217361]
 script = ExtResource("1_csjvw")
+tempo_de_jogo = 5.0
+nivel_atual = 2
 ids_itens_ja_selecionaveis = Array[int]([1])
 
 [node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
@@ -143,6 +146,11 @@ sempre_selecionavel = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1433938951]
 libraries/ = SubResource("AnimationLibrary_608sb")
+
+[node name="GameplayAdicional" type="Node2D" parent="." unique_id=1826054273 node_paths=PackedStringArray("gameplay_node")]
+script = ExtResource("6_t254f")
+gameplay_node = NodePath("..")
+cena_apos_gameplay = "gameplay_onibus_volta"
 
 [connection signal="timeout" from="TimerGeral" to="." method="_on_timer_geral_timeout"]
 [connection signal="timeout" from="TimerTarefas" to="." method="_on_timer_tarefas_timeout"]

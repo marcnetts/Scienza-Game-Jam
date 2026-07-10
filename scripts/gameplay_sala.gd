@@ -22,6 +22,7 @@ var itens_sempre_selecionaveis: Array[ItemSelecionavel]
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var interagiu_primeira_vez: bool = false
+signal gameplay_terminou
 
 func _ready():
 	if transicao_cena and animation_player:
@@ -80,6 +81,7 @@ func _on_timer_geral_timeout() -> void:
 	if timer_relogio.time_left < 0.1:
 		timer_relogio.timeout.emit()
 	pausar_todos_timers()
+	gameplay_terminou.emit()
 
 func _on_timer_tarefas_timeout() -> void:
 	var itens_sem_acao = itens_selecionaveis.filter(func(item): return (
