@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://kh3eb0cvoioc"]
 
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_rqo6s"]
-[ext_resource type="Texture2D" uid="uid://ho1gsbd0sgfa" path="res://assets/cenario cozinha 2.png" id="2_r4jrb"]
+[ext_resource type="Texture2D" uid="uid://camkctsoqqwsy" path="res://assets/cena almoco.png" id="2_fxd4g"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_fxd4g"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_f5tvd"]
 [ext_resource type="Texture2D" uid="uid://cukng203ws63d" path="res://assets/icone_questao.png" id="5_fxd4g"]
-[ext_resource type="Texture2D" uid="uid://damxydfeq6fjs" path="res://icon.svg" id="5_r4jrb"]
 [ext_resource type="Script" uid="uid://ba17rstjahcl3" path="res://scripts/gameplay_add_almoco.gd" id="5_rqo6s"]
+[ext_resource type="Texture2D" uid="uid://b6n2btm7thtih" path="res://assets/sprite_almoco.png" id="6_f5tvd"]
 
 [sub_resource type="Animation" id="Animation_7frf5"]
 length = 0.001
@@ -172,12 +172,13 @@ nivel_atual = 2
 is_continuar_sujando_final_jogo = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=2022820869]
-position = Vector2(576.00006, 325.00003)
-scale = Vector2(0.8004144, 0.5957643)
-texture = ExtResource("2_r4jrb")
+position = Vector2(576.00006, 313.00003)
+scale = Vector2(0.9642858, 0.9642857)
+texture = ExtResource("2_fxd4g")
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_fxd4g")]
-position = Vector2(667, 394)
+position = Vector2(765, 384)
+texture = null
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
@@ -249,13 +250,6 @@ wait_time = 30.0
 
 [node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
 
-[node name="ItemSelecionavel" parent="ItensSempreSelecionaveis" unique_id=1860087334 instance=ExtResource("4_f5tvd")]
-visible = false
-position = Vector2(854, 404)
-tempo_limpeza = 0.5
-segundos_timer_item_nao_selectionavel = 0.8
-sempre_selecionavel = true
-
 [node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_f5tvd")]
 position = Vector2(179, 178)
 tempo_limpeza = 0.0
@@ -279,15 +273,16 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_fxd4g")
 
 [node name="ButtonAlmoco" type="Button" parent="ItensSempreSelecionaveis" unique_id=1064642712]
-offset_left = 790.0
-offset_top = 330.0
-offset_right = 926.0
-offset_bottom = 466.0
+offset_left = 770.00006
+offset_top = 388.0
+offset_right = 910.00006
+offset_bottom = 524.0
+scale = Vector2(0.9642858, 0.9642857)
 theme_override_colors/icon_normal_color = Color(1, 1, 0, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 0, 1)
 theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
-icon = ExtResource("5_r4jrb")
+icon = ExtResource("6_f5tvd")
 
 [node name="MarkerLabelComendo" type="Marker2D" parent="ItensSempreSelecionaveis" unique_id=1187325189]
 position = Vector2(857, 286)
@@ -305,9 +300,7 @@ botao_almoco = NodePath("../ItensSempreSelecionaveis/ButtonAlmoco")
 [connection signal="timeout" from="TimerGeral" to="." method="_on_timer_geral_timeout"]
 [connection signal="timeout" from="TimerTarefas" to="." method="_on_timer_tarefas_timeout"]
 [connection signal="timeout" from="TimerRelogio" to="." method="_on_timer_relogio_timeout"]
-[connection signal="tarefa_concluida" from="ItensSempreSelecionaveis/ItemSelecionavel" to="GameplayAdicional" method="_on_item_selecionavel_tarefa_concluida"]
 [connection signal="pressed" from="ItensSempreSelecionaveis/ButtonAlmoco" to="GameplayAdicional" method="_on_button_almoco_pressed"]
 
-[editable path="ItensSempreSelecionaveis/ItemSelecionavel"]
 [editable path="ItensSempreSelecionaveis/ItemSelecionavel3"]
 [editable path="ItensSempreSelecionaveis/ItemSelecionavel4"]

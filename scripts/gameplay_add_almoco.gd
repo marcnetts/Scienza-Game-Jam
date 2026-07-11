@@ -22,7 +22,7 @@ func apos_gameplay():
 func _on_item_selecionavel_tarefa_concluida() -> void:
 	print(tarefas_concluidas)
 	tarefas_concluidas += 1
-	if tarefas_concluidas == 5:
+	if tarefas_concluidas == 3:
 		gameplay_node._on_timer_geral_timeout()
 
 

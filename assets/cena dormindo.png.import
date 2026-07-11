@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ho1gsbd0sgfa"
-path="res://.godot/imported/cenario cozinha 2.png-e479f37f3f3fa2b35354f761ad1f829d.ctex"
+uid="uid://dpwso83y8xemo"
+path="res://.godot/imported/cena dormindo.png-2cae57510a1cf961d5899821d22f657b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenario cozinha 2.png"
-dest_files=["res://.godot/imported/cenario cozinha 2.png-e479f37f3f3fa2b35354f761ad1f829d.ctex"]
+source_file="res://assets/cena dormindo.png"
+dest_files=["res://.godot/imported/cena dormindo.png-2cae57510a1cf961d5899821d22f657b.ctex"]
 
 [params]
 

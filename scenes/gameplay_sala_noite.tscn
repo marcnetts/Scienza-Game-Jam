@@ -107,7 +107,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_8qk8r")]
-position = Vector2(431, 518)
+position = Vector2(508, 702)
+texture = null
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 

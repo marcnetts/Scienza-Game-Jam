@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dirdbyqp1hluu"
-path="res://.godot/imported/cena final.png-9ad67efc40a1ebb2cb3f7a9c2caf70c8.ctex"
+uid="uid://dfqt1bk5k78et"
+path="res://.godot/imported/personagem_cansada_onibusss.png-5fa9f8bda17e2a45d13ef6390d17a4e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cena final.png"
-dest_files=["res://.godot/imported/cena final.png-9ad67efc40a1ebb2cb3f7a9c2caf70c8.ctex"]
+source_file="res://assets/personagem_cansada_onibusss.png"
+dest_files=["res://.godot/imported/personagem_cansada_onibusss.png-5fa9f8bda17e2a45d13ef6390d17a4e6.ctex"]
 
 [params]
 

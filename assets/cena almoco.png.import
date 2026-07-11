@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8e5lhuphyxdu"
-path="res://.godot/imported/casa noite.png-4a0e0c0ff8f18cf21c359f0ff91d5b87.ctex"
+uid="uid://camkctsoqqwsy"
+path="res://.godot/imported/cena almoco.png-386e1999a1de10892705aa970153a330.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/casa noite.png"
-dest_files=["res://.godot/imported/casa noite.png-4a0e0c0ff8f18cf21c359f0ff91d5b87.ctex"]
+source_file="res://assets/cena almoco.png"
+dest_files=["res://.godot/imported/cena almoco.png-386e1999a1de10892705aa970153a330.ctex"]
 
 [params]
 

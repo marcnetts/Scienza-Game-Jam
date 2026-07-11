@@ -20,6 +20,78 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Interface/ButtonProximaCena:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Interface/LabelHorario:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Interface/ButtonProximaCena:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Interface/LabelHorario:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameplayAdicional/InterrupcaoMorador:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GameplayAdicional/InterrupcaoMorador/SpriteCrianca:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-90, 542)]
+}
 
 [sub_resource type="Animation" id="Animation_ghfb8"]
 resource_name = "fade_in_black"
@@ -52,16 +124,108 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_j485p"]
+resource_name = "mostrar_botao_proximo"
+
+[sub_resource type="Animation" id="Animation_ow10t"]
+resource_name = "mostrar_crianca"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameplayAdicional/InterrupcaoMorador/SpriteCrianca:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 0.5176324),
+"update": 0,
+"values": [Vector2(-90, 542), Vector2(352, 542)]
+}
+
+[sub_resource type="Animation" id="Animation_e4vgo"]
+resource_name = "mostrar_interface_cozinha"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interface/ButtonProximaCena:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Interface/LabelHorario:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Interface/ButtonProximaCena:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Interface/LabelHorario:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_syyi2"]
+resource_name = "mostrar_morador"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameplayAdicional/InterrupcaoMorador:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_608sb"]
 _data = {
 &"RESET": SubResource("Animation_7frf5"),
 &"fade_in_black": SubResource("Animation_ghfb8"),
-&"fade_out_black": SubResource("Animation_5h207")
+&"fade_out_black": SubResource("Animation_5h207"),
+&"mostrar_botao_proximo": SubResource("Animation_j485p"),
+&"mostrar_crianca": SubResource("Animation_ow10t"),
+&"mostrar_interface_cozinha": SubResource("Animation_e4vgo"),
+&"mostrar_morador": SubResource("Animation_syyi2")
 }
 
 [node name="Node2D" type="Node2D" unique_id=1756217361]
 script = ExtResource("1_csjvw")
-tempo_de_jogo = 5.0
+tempo_de_jogo = 10.0
+relogio_hora = 13
 nivel_atual = 2
 ids_itens_ja_selecionaveis = Array[int]([1])
 
@@ -69,8 +233,6 @@ ids_itens_ja_selecionaveis = Array[int]([1])
 modulate = Color(1, 1, 1, 0.38039216)
 position = Vector2(669, 295)
 texture = ExtResource("1_4onw8")
-
-[node name="Bg" type="Sprite2D" parent="." unique_id=536366719]
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("4_hhn5h")]
 position = Vector2(729, 348)
@@ -108,6 +270,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LabelHorario" type="RichTextLabel" parent="Interface" unique_id=2071157458]
+visible = false
 offset_left = 85.0
 offset_top = 13.0
 offset_right = 213.0
@@ -148,7 +311,7 @@ libraries/ = SubResource("AnimationLibrary_608sb")
 [node name="GameplayAdicional" type="Node2D" parent="." unique_id=1826054273 node_paths=PackedStringArray("gameplay_node")]
 script = ExtResource("6_t254f")
 gameplay_node = NodePath("..")
-cena_apos_gameplay = "gameplay_onibus_volta"
+cena_apos_gameplay = "gameplay_bater_ponto_2"
 
 [connection signal="timeout" from="TimerGeral" to="." method="_on_timer_geral_timeout"]
 [connection signal="timeout" from="TimerTarefas" to="." method="_on_timer_tarefas_timeout"]

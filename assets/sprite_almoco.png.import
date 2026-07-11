@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dypeupapblqmy"
-path="res://.godot/imported/ônibus.png-7925c4fd33d5a7d55efb708ed1c851a5.ctex"
+uid="uid://b6n2btm7thtih"
+path="res://.godot/imported/sprite_almoco.png-3eab651c71e3237e311ae7975ef0599d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ônibus.png"
-dest_files=["res://.godot/imported/ônibus.png-7925c4fd33d5a7d55efb708ed1c851a5.ctex"]
+source_file="res://assets/sprite_almoco.png"
+dest_files=["res://.godot/imported/sprite_almoco.png-3eab651c71e3237e311ae7975ef0599d.ctex"]
 
 [params]
 

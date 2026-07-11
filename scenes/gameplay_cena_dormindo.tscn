@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://x2bvny5xx0go"]
 
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_fuhw8"]
-[ext_resource type="Texture2D" uid="uid://dirdbyqp1hluu" path="res://assets/cena final.png" id="2_o2t5d"]
+[ext_resource type="Texture2D" uid="uid://dpwso83y8xemo" path="res://assets/cena dormindo.png" id="2_o2t5d"]
 [ext_resource type="Script" uid="uid://yd5i55nkdfs1" path="res://scripts/gameplay_add_cena_dormindo.gd" id="3_o2t5d"]
 
 [sub_resource type="Animation" id="Animation_7frf5"]
@@ -65,7 +65,7 @@ segundos_mudar_horario = 0.0
 
 [node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
 position = Vector2(576.00006, 325.00003)
-scale = Vector2(0.8004144, 0.5957643)
+scale = Vector2(0.96875006, 0.9687501)
 texture = ExtResource("2_o2t5d")
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=202607461]
@@ -114,5 +114,18 @@ libraries/ = SubResource("AnimationLibrary_clggk")
 [node name="GameplayAdicional" type="Node2D" parent="." unique_id=1349567913]
 script = ExtResource("3_o2t5d")
 cena_apos_gameplay = "gameplay_creditos"
+
+[node name="LabelMensagem" type="RichTextLabel" parent="." unique_id=1087842057]
+offset_left = 114.0
+offset_top = 132.0
+offset_right = 1009.0
+offset_bottom = 320.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 34
+text = "Seu trabalho é cada vez mais intenso.
+Com isso, o cansaço, estresse e distanciamento da família andam pertos.
+Mas quem sabe amanhã as coisas melhoram..."
+fit_content = true
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_creditos"]]
