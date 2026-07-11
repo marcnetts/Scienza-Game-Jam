@@ -19,6 +19,7 @@ shape = SubResource("RectangleShape2D_gen1s")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1386628952]
 modulate = Color(1, 1, 1, 0.8352941)
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -81,16 +81,6 @@ theme_override_font_sizes/normal_font_size = 40
 text = "20:00h"
 fit_content = true
 
-[node name="TransicaoCena" type="ColorRect" parent="Interface" unique_id=1097449000]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
 [node name="ButtonProximaCena" type="Button" parent="Interface" unique_id=1853671390]
 anchors_preset = 8
 anchor_left = 0.5
@@ -105,6 +95,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Próximo"
+
+[node name="TransicaoCena" type="ColorRect" parent="Interface" unique_id=1097449000]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_hffin")]
 position = Vector2(781.56104, 490.41705)

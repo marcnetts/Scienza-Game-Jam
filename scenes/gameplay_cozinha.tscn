@@ -1,10 +1,27 @@
 [gd_scene format=3 uid="uid://ck44e2atu67vc"]
 
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_n6ir7"]
-[ext_resource type="Texture2D" uid="uid://dq4rmhb04yd33" path="res://assets/cenario cozinha.png" id="2_gghsj"]
+[ext_resource type="Texture2D" uid="uid://id5u4i45vt23" path="res://assets/cena cozinha.jpg" id="2_e4vgo"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_eibfs"]
+[ext_resource type="Texture2D" uid="uid://b4sr130o35v3e" path="res://assets/cena cozinha pratos.png" id="4_n6ir7"]
 [ext_resource type="Script" uid="uid://xkngnprtusp4" path="res://scripts/gameplay_add_cozinha.gd" id="5_e4vgo"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="5_iwffe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6ir7"]
+atlas = ExtResource("4_n6ir7")
+region = Rect2(1360, 1168, 903, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gghsj"]
+atlas = ExtResource("4_n6ir7")
+region = Rect2(428, 1063, 387, 452)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eibfs"]
+atlas = ExtResource("4_n6ir7")
+region = Rect2(2318, 1055, 807, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsqgi"]
+atlas = ExtResource("4_n6ir7")
+region = Rect2(855, 1063, 387, 452)
 
 [sub_resource type="Animation" id="Animation_7frf5"]
 length = 0.001
@@ -63,6 +80,54 @@ tracks/4/path = NodePath("Interface/LabelHorario:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ItensSelecionaveis/PratoCentro:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ItensSelecionaveis/ItemSelecionavel2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ItensSelecionaveis/ItemSelecionavel3:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ItensSelecionaveis/ItemSelecionavel4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -152,12 +217,64 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_n6ir7"]
+resource_name = "sumir_pratos"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItensSelecionaveis/PratoCentro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItensSelecionaveis/ItemSelecionavel2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItensSelecionaveis/ItemSelecionavel3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItensSelecionaveis/ItemSelecionavel4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_608sb"]
 _data = {
 &"RESET": SubResource("Animation_7frf5"),
 &"fade_in_black": SubResource("Animation_ghfb8"),
 &"fade_out_black": SubResource("Animation_5h207"),
-&"mostrar_interface_cozinha": SubResource("Animation_e4vgo")
+&"mostrar_interface_cozinha": SubResource("Animation_e4vgo"),
+&"sumir_pratos": SubResource("Animation_n6ir7")
 }
 
 [node name="Node2D" type="Node2D" unique_id=1756217361]
@@ -171,33 +288,49 @@ ids_itens_ja_selecionaveis = Array[int]([1])
 
 [node name="Background" type="Sprite2D" parent="." unique_id=2022820869]
 position = Vector2(576.00006, 325.00003)
-scale = Vector2(0.8004144, 0.5957643)
-texture = ExtResource("2_gghsj")
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("2_e4vgo")
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
-[node name="ItemSelecionavel" parent="ItensSelecionaveis" unique_id=1860087334 instance=ExtResource("5_iwffe")]
-position = Vector2(633, 321)
+[node name="PratoCentro" parent="ItensSelecionaveis" unique_id=1860087334 instance=ExtResource("5_iwffe")]
+position = Vector2(554, 394)
 tempo_limpeza = 1.5
 segundos_timer_item_nao_selectionavel = 0.5
+
+[node name="Sprite2D" parent="ItensSelecionaveis/PratoCentro" index="0" unique_id=277402732]
+scale = Vector2(0.305, 0.305)
+texture = SubResource("AtlasTexture_n6ir7")
 
 [node name="ItemSelecionavel2" parent="ItensSelecionaveis" unique_id=1326175262 instance=ExtResource("5_iwffe")]
-position = Vector2(486, 440)
+position = Vector2(304, 384)
 tempo_limpeza = 1.5
 segundos_timer_item_nao_selectionavel = 0.5
+
+[node name="Sprite2D" parent="ItensSelecionaveis/ItemSelecionavel2" index="0" unique_id=277402732]
+scale = Vector2(0.305, 0.305)
+texture = SubResource("AtlasTexture_gghsj")
 
 [node name="ItemSelecionavel3" parent="ItensSelecionaveis" unique_id=350136880 instance=ExtResource("5_iwffe")]
-position = Vector2(199, 509)
+position = Vector2(848, 378)
 tempo_limpeza = 1.5
 segundos_timer_item_nao_selectionavel = 0.5
 
+[node name="Sprite2D" parent="ItensSelecionaveis/ItemSelecionavel3" index="0" unique_id=277402732]
+scale = Vector2(0.305, 0.305)
+texture = SubResource("AtlasTexture_eibfs")
+
 [node name="ItemSelecionavel4" parent="ItensSelecionaveis" unique_id=424156609 instance=ExtResource("5_iwffe")]
-position = Vector2(764, 146)
+position = Vector2(1051, 375)
 tempo_limpeza = 1.0
 segundos_timer_item_nao_selectionavel = 10.0
 
+[node name="Sprite2D" parent="ItensSelecionaveis/ItemSelecionavel4" index="0" unique_id=277402732]
+scale = Vector2(0.305, 0.305)
+texture = SubResource("AtlasTexture_vsqgi")
+
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_eibfs")]
-position = Vector2(769, 425)
+position = Vector2(148, 516)
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=202607461]
 
@@ -277,3 +410,8 @@ gameplay_node = NodePath("..")
 [connection signal="timeout" from="TimerGeral" to="." method="_on_timer_geral_timeout"]
 [connection signal="timeout" from="TimerTarefas" to="." method="_on_timer_tarefas_timeout"]
 [connection signal="timeout" from="TimerRelogio" to="." method="_on_timer_relogio_timeout"]
+
+[editable path="ItensSelecionaveis/PratoCentro"]
+[editable path="ItensSelecionaveis/ItemSelecionavel2"]
+[editable path="ItensSelecionaveis/ItemSelecionavel3"]
+[editable path="ItensSelecionaveis/ItemSelecionavel4"]

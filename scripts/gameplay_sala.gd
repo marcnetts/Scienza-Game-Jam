@@ -8,6 +8,8 @@ extends Node2D
 @export var nivel_atual: int = 1 #todo
 @export var is_continuar_sujando_final_jogo: bool = false
 @export var fala_inicial: String
+@export var maximo_items_sujos_timer: int = 0
+var itens_sujos_por_timer = 0
 
 var itens_selecionaveis: Array[ItemSelecionavel]
 var itens_sempre_selecionaveis: Array[ItemSelecionavel]
@@ -92,13 +94,19 @@ func _on_timer_geral_timeout() -> void:
 	gameplay_terminou.emit()
 
 func _on_timer_tarefas_timeout() -> void:
-	var itens_sem_acao = itens_selecionaveis.filter(func(item): return (
-		not item.is_precisa_interagir
-		and item.timer_item_nao_selecionavel.is_stopped()
-		and (is_continuar_sujando_final_jogo or (timer_geral.time_left > item.tempo_limpeza + 1.5))
-	))
-	if itens_sem_acao.size() > 0:
-		itens_sem_acao.pick_random().sujar()
+	if maximo_items_sujos_timer == 0 or maximo_items_sujos_timer < itens_sujos_por_timer:
+		var itens_sem_acao = itens_selecionaveis.filter(func(item): return (
+			not item.is_precisa_interagir
+			and item.timer_item_nao_selecionavel.is_stopped()
+			and (
+				is_continuar_sujando_final_jogo
+				or timer_geral.time_left == 0
+				or (timer_geral.time_left > item.tempo_limpeza + 1.5)
+			)
+		))
+		if itens_sem_acao.size() > 0:
+			itens_sem_acao.pick_random().sujar()
+			itens_sujos_por_timer += 1
 
 func _on_button_proxima_cena_pressed(cena: String) -> void:
 	if transicao_cena and animation_player:

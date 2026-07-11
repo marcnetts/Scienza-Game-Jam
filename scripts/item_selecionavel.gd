@@ -27,9 +27,10 @@ func _ready():
 		sprite.texture = sprite_inicial
 	else:
 		sprite_inicial = sprite.texture
-	colisao.shape.size = sprite.texture.get_size()
+	colisao.shape = colisao.shape.duplicate()
+	colisao.shape.size = sprite.texture.get_size() * sprite.scale
 	
-	barra_progresso.position.y -= (sprite.texture.get_size().y / 2) + 20
+	barra_progresso.position.y -= (sprite.texture.get_size().y * sprite.scale.y / 2) + 20
 	barra_progresso.visible = false
 	barra_progresso.max_value = tempo_limpeza
 
