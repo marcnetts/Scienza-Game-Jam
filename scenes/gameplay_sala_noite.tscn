@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://x1ooxv8kbvfh"]
 
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_dtw04"]
-[ext_resource type="Texture2D" uid="uid://c8e5lhuphyxdu" path="res://assets/casa noite.png" id="2_xah3v"]
+[ext_resource type="Texture2D" uid="uid://g76ryorshe0b" path="res://assets/cena casa noite.jpg" id="2_qspvo"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_8qk8r"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_efu6i"]
 
@@ -64,10 +64,10 @@ tempo_de_jogo = 0.0
 relogio_hora = 6
 segundos_mudar_horario = 0.0
 
-[node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
+[node name="Background" type="Sprite2D" parent="." unique_id=335129010]
 position = Vector2(576.00006, 325.00003)
-scale = Vector2(0.8004144, 0.5957643)
-texture = ExtResource("2_xah3v")
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("2_qspvo")
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=202607461]
 
@@ -106,31 +106,38 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_8qk8r")]
-position = Vector2(211, 376)
+position = Vector2(431, 518)
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
 [node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
 
 [node name="ItemSelecionavel" parent="ItensSempreSelecionaveis" unique_id=1860087334 instance=ExtResource("4_efu6i")]
-position = Vector2(940, 399)
+position = Vector2(810, 386)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
-fala_personagem = "A cama parece comfortável agora."
+fala_personagem = "Cama comfortável agora..."
 sempre_selecionavel = true
 
 [node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_efu6i")]
-position = Vector2(568, 371)
+position = Vector2(456, 347)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Sem tempo para ver TV."
 sempre_selecionavel = true
 
 [node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=1520368745 instance=ExtResource("4_efu6i")]
-position = Vector2(227, 576)
+position = Vector2(846, 555)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
-fala_personagem = "Vou jantar agora."
+fala_personagem = "Vou jantar antes de dormir."
+sempre_selecionavel = true
+
+[node name="ItemSelecionavel5" parent="ItensSempreSelecionaveis" unique_id=866357137 instance=ExtResource("4_efu6i")]
+position = Vector2(78, 445)
+tempo_limpeza = 0.0
+segundos_timer_item_nao_selectionavel = 0.0
+fala_personagem = "A limpeza fica para outro dia."
 sempre_selecionavel = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=328282900]
