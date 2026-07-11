@@ -262,6 +262,13 @@ segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Sol forte da tarde."
 sempre_selecionavel = true
 
+[node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=181426964 instance=ExtResource("4_f5tvd")]
+position = Vector2(936, 199)
+tempo_limpeza = 0.0
+segundos_timer_item_nao_selectionavel = 0.0
+fala_personagem = "Um dia tenho uma cozinha planejada."
+sempre_selecionavel = true
+
 [node name="ButtonAlmoco" type="Button" parent="ItensSempreSelecionaveis" unique_id=1064642712]
 offset_left = 790.0
 offset_top = 330.0

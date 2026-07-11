@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw2sq0tnse3sr"]
 
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_15jde"]
-[ext_resource type="Texture2D" uid="uid://dypeupapblqmy" path="res://assets/ônibus.png" id="2_7frf5"]
+[ext_resource type="Texture2D" uid="uid://cfiphw6mnh73b" path="res://assets/cena onibus.jpg" id="2_7frf5"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_ghfb8"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_5h207"]
 [ext_resource type="Script" uid="uid://8c5rfqdt2go6" path="res://scripts/camera_tremida.gd" id="5_7frf5"]
@@ -66,9 +66,9 @@ relogio_hora = 6
 segundos_mudar_horario = 0.0
 fala_inicial = "Vamos para mais um dia."
 
-[node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
+[node name="Background" type="Sprite2D" parent="." unique_id=335129010]
 position = Vector2(576.00006, 325.00003)
-scale = Vector2(0.8004144, 0.5957643)
+scale = Vector2(0.33, 0.33)
 texture = ExtResource("2_7frf5")
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=202607461]
@@ -108,14 +108,14 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_ghfb8")]
-position = Vector2(341, 348)
+position = Vector2(207.7669, 413.88452)
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
 [node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
 
 [node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=424156609 instance=ExtResource("4_5h207")]
-position = Vector2(113, 406)
+position = Vector2(433.63794, 504.09473)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Que cheiro..."
@@ -132,7 +132,7 @@ sempre_selecionavel = true
 position = Vector2(671, 259)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
-fala_personagem = "Ainda bem escuro."
+fala_personagem = "Sol no meio da semana?"
 sempre_selecionavel = true
 
 [node name="CameraTremida" type="Camera2D" parent="." unique_id=1570109313]
@@ -144,3 +144,7 @@ script = ExtResource("5_7frf5")
 libraries/ = SubResource("AnimationLibrary_clggk")
 
 [connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_bater_ponto"]]
+
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel4"]
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel"]
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel3"]

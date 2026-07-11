@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://yj2ltqdo66f3"]
 
-[ext_resource type="Texture2D" uid="uid://bwcsp7ovupcnj" path="res://assets/scienza jam cena salao.png" id="1_i85hu"]
 [ext_resource type="Script" uid="uid://6hj64yby8ka7" path="res://scripts/menu_principal.gd" id="1_mk4g1"]
+[ext_resource type="Texture2D" uid="uid://cfiphw6mnh73b" path="res://assets/cena onibus.jpg" id="2_fgx33"]
 
 [node name="MenuPrincipal" type="Control" unique_id=226209167]
 layout_mode = 3
@@ -12,20 +12,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mk4g1")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1876568022]
+[node name="Background" type="Sprite2D" parent="." unique_id=98549603]
+position = Vector2(576.00006, 325.00003)
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("2_fgx33")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1615498725]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_bottom = -20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Fundo" type="Sprite2D" parent="AspectRatioContainer" unique_id=1315327185]
-texture = ExtResource("1_i85hu")
+color = Color(0.53048015, 0.5392593, 0, 0.23529412)
 
 [node name="ButtonComeçar" type="Button" parent="." unique_id=989603119]
 custom_minimum_size = Vector2(300, 0)
@@ -85,12 +84,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -340.5
-offset_top = -221.0
-offset_right = 340.5
-offset_bottom = -125.0
+offset_left = -364.0
+offset_top = -196.0
+offset_right = 364.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 25
 theme_override_font_sizes/normal_font_size = 70
 text = "Um Dia Para Sonhar"
 fit_content = true

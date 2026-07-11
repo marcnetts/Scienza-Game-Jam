@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://d14oi02l4ggfr"]
 
 [ext_resource type="Script" uid="uid://daoyl7nvd118g" path="res://scripts/gameplay_sala.gd" id="1_sq7i7"]
+[ext_resource type="Texture2D" uid="uid://cfiphw6mnh73b" path="res://assets/cena onibus.jpg" id="2_hffin"]
 [ext_resource type="Texture2D" uid="uid://dypeupapblqmy" path="res://assets/ônibus.png" id="2_yc4xt"]
+[ext_resource type="Texture2D" uid="uid://dein0s8ko6xxv" path="res://assets/cena onibus luz noite.png" id="3_1quhb"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_hffin"]
+[ext_resource type="Texture2D" uid="uid://ck8kewedmpkex" path="res://assets/cena onibus luzes.png" id="3_mgbhg"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_1quhb"]
 [ext_resource type="Script" uid="uid://8c5rfqdt2go6" path="res://scripts/camera_tremida.gd" id="5_mgbhg"]
 
@@ -65,7 +68,27 @@ tempo_de_jogo = 0.0
 relogio_hora = 6
 segundos_mudar_horario = 0.0
 
+[node name="Background3" type="Sprite2D" parent="." unique_id=1139432255]
+modulate = Color(2.3584067e-05, 0.44503886, 0.8432054, 1)
+position = Vector2(576.00006, 325.00003)
+scale = Vector2(-0.33, 0.33)
+texture = ExtResource("2_hffin")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=892944576]
+modulate = Color(1, 1, 1, 0.6509804)
+position = Vector2(576.00006, 325.00003)
+scale = Vector2(-0.33, 0.33)
+texture = ExtResource("3_mgbhg")
+
+[node name="Background2" type="PointLight2D" parent="." unique_id=556471899]
+position = Vector2(576.00006, 325.00003)
+scale = Vector2(-0.33, 0.33)
+energy = 2.65
+range_z_max = 2
+texture = ExtResource("3_1quhb")
+
 [node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
+visible = false
 position = Vector2(576.00006, 325.00003)
 scale = Vector2(0.8004144, 0.5957643)
 texture = ExtResource("2_yc4xt")
@@ -107,21 +130,23 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_hffin")]
-position = Vector2(781.56104, 490.41705)
+z_index = 3
+position = Vector2(216.81769, 490.41705)
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
 [node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
 
 [node name="ItemSelecionavel" parent="ItensSempreSelecionaveis" unique_id=1860087334 instance=ExtResource("4_1quhb")]
-position = Vector2(686.85803, 509.72498)
+z_index = 3
+position = Vector2(340.26556, 546.3275)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Algumas mensagens do meu filho..."
 sempre_selecionavel = true
 
 [node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_1quhb")]
-position = Vector2(474.01196, 227.05595)
+position = Vector2(547.217, 227.05598)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "O tempo passa rápido."
@@ -134,5 +159,11 @@ script = ExtResource("5_mgbhg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=328282900]
 libraries/ = SubResource("AnimationLibrary_clggk")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1379045311]
+visible = false
+position = Vector2(20.936523, 19.32611)
+energy = 0.35
+max_distance = 84.0
 
 [connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_sala_noite"]]

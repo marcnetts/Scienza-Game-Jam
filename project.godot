@@ -13,7 +13,10 @@ config_version=5
 config/name="Scienza Game Jam"
 run/main_scene="uid://yj2ltqdo66f3"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/stretch_mode=0
+boot_splash/image="uid://02f6x5tg4xc3"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2000
 
 [display]
 
