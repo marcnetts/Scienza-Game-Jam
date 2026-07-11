@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var gameplay_node: Node2D
+@export var gameplay_node: GameplayPointClick
 @export var marker_txt_almoco: Marker2D
 @export var botao_almoco: Button
 var tarefas_concluidas: int = 0

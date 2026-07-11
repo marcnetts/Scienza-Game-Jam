@@ -1,3 +1,4 @@
+class_name GameplayPointClick
 extends Node2D
 
 @export var tempo_de_jogo: float = 60.0
@@ -68,7 +69,8 @@ func resumir_todos_timers():
 	timer_sujeira.paused = false
 
 func falar_jogador(fala: String):
-	jogador.mostrar_fala(fala)
+	if jogador:
+		jogador.mostrar_fala(fala)
 
 func validar_interacao_jogador():
 	tarefa_concluida.emit()

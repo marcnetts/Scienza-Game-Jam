@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var gameplay_node: Node2D
+@export var gameplay_node: GameplayPointClick
 @export var cena_apos_gameplay: String
 var tarefas_concluidas: int = 0
 
