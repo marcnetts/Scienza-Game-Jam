@@ -121,10 +121,10 @@ offset_top = 132.0
 offset_right = 1009.0
 offset_bottom = 320.0
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/normal_font_size = 34
-text = "Seu trabalho é cada vez mais intenso.
-Com isso, o cansaço, estresse e distanciamento da família andam pertos.
-Mas quem sabe amanhã as coisas melhoram..."
+theme_override_font_sizes/normal_font_size = 35
+text = "\"Seu trabalho é cada vez mais intenso.
+O cansaço, o estresse e a distância da família aumentam.
+Mas, quem sabe, em um futuro próximo as coisas melhoram..."
 fit_content = true
 horizontal_alignment = 1
 

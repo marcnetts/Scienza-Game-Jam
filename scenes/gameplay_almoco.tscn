@@ -251,6 +251,7 @@ wait_time = 30.0
 [node name="ItensSempreSelecionaveis" type="Node2D" parent="." unique_id=172458935]
 
 [node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_f5tvd")]
+visible = false
 position = Vector2(179, 178)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
@@ -265,7 +266,7 @@ texture = ExtResource("5_fxd4g")
 position = Vector2(936, 199)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
-fala_personagem = "Um dia tenho uma cozinha planejada."
+fala_personagem = "Um dia terei uma cozinha planejada."
 sempre_selecionavel = true
 
 [node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel4" index="0" unique_id=277402732]
@@ -296,7 +297,7 @@ gameplay_node = NodePath("..")
 marker_txt_almoco = NodePath("../ItensSempreSelecionaveis/MarkerLabelComendo")
 botao_almoco = NodePath("../ItensSempreSelecionaveis/ButtonAlmoco")
 
-[connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_sala"]]
+[connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_onibus_volta"]]
 [connection signal="timeout" from="TimerGeral" to="." method="_on_timer_geral_timeout"]
 [connection signal="timeout" from="TimerTarefas" to="." method="_on_timer_tarefas_timeout"]
 [connection signal="timeout" from="TimerRelogio" to="." method="_on_timer_relogio_timeout"]

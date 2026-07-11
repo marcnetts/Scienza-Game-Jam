@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cfiphw6mnh73b" path="res://assets/cena onibus.jpg" id="2_y2sys"]
 [ext_resource type="Texture2D" uid="uid://02f6x5tg4xc3" path="res://assets/scienza game jam logo.png" id="4_ojmir"]
 
+[sub_resource type="Theme" id="Theme_bry4a"]
+
 [node name="MenuCreditos" type="Control" unique_id=226209167]
 layout_mode = 3
 anchors_preset = 15
@@ -43,7 +45,7 @@ grow_vertical = 2
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "\"Um Dia Para Sonhar\"
+text = "\"Menos um, Faltam Cinco\"
 Entrada da [color=lightblue]Scienza Game Jam 2026[/color]"
 fit_content = true
 autowrap_mode = 0
@@ -91,8 +93,8 @@ theme_override_font_sizes/font_size = 40
 text = "VOLTAR"
 
 [node name="ScienzaGameJamLogo" type="Sprite2D" parent="." unique_id=1992838440]
-position = Vector2(998, 145)
-scale = Vector2(0.2032086, 0.20320864)
+position = Vector2(1005.4714, 175.99998)
+scale = Vector2(0.3473282, 0.34732825)
 texture = ExtResource("4_ojmir")
 
 [node name="LinkScienza" type="LinkButton" parent="." unique_id=557924998]
@@ -134,5 +136,33 @@ offset_top = 394.0
 offset_right = 267.0
 offset_bottom = 430.0
 uri = "https://www.artstation.com/victoriamotta"
+
+[node name="ButtonVoltar2" type="Button" parent="." unique_id=505507201]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -522.0
+offset_top = 209.0
+offset_right = -166.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="LinkButton" type="LinkButton" parent="." unique_id=1393334591]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 533.0
+offset_right = 410.0
+offset_bottom = 596.0
+theme = SubResource("Theme_bry4a")
+theme_override_colors/font_color = Color(0.6405781, 0.92899853, 0.99999994, 1)
+theme_override_font_sizes/font_size = 35
+text = " Processo de Criação "
+uri = "https://drive.google.com/drive/folders/1AHotTcZp7rWOVQgTfqtM4ID6ZLl1pYdj"
 
 [connection signal="pressed" from="ButtonVoltar" to="." method="_on_button_voltar_pressed"]

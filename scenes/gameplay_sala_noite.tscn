@@ -118,7 +118,7 @@ texture = null
 position = Vector2(810, 386)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
-fala_personagem = "Cama comfortável agora..."
+fala_personagem = "Ufa, um dia já foi, agora só faltam cinco."
 sempre_selecionavel = true
 
 [node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel" index="0" unique_id=277402732]

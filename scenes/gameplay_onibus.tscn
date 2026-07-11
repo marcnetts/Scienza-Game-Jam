@@ -132,6 +132,7 @@ fala_personagem = "Não vão dar lugar para a senhora?"
 sempre_selecionavel = true
 
 [node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_5h207")]
+visible = false
 position = Vector2(671, 259)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0

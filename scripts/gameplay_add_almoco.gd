@@ -16,7 +16,7 @@ func comeco_gameplay():
 
 func apos_gameplay():
 	botao_almoco.disabled = true
-	gameplay_node.falar_jogador('Round 2 agora de tarde.')
+	gameplay_node.falar_jogador('Hora de voltar ao serviço.')
 	gameplay_node.animation_player.play('mostrar_interface_cozinha')
 
 func _on_item_selecionavel_tarefa_concluida() -> void:
