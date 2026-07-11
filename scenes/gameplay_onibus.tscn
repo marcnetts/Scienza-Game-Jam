@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_5h207"]
 [ext_resource type="Script" uid="uid://8c5rfqdt2go6" path="res://scripts/camera_tremida.gd" id="5_7frf5"]
 [ext_resource type="Texture2D" uid="uid://cukng203ws63d" path="res://assets/icone_questao.png" id="5_ghfb8"]
+[ext_resource type="Texture2D" uid="uid://buqemf08ytb6k" path="res://assets/personagem_pe_onibus_2.png" id="7_5h207"]
 
 [sub_resource type="Animation" id="Animation_7frf5"]
 length = 0.001
@@ -109,7 +110,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Jogador" parent="." unique_id=193595288 instance=ExtResource("3_ghfb8")]
-position = Vector2(207.7669, 413.88452)
+position = Vector2(251.68988, 394.8512)
+texture = null
 
 [node name="ItensSelecionaveis" type="Node2D" parent="." unique_id=364634199]
 
@@ -147,6 +149,11 @@ script = ExtResource("5_7frf5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=328282900]
 libraries/ = SubResource("AnimationLibrary_clggk")
+
+[node name="PersonagemPeOnibus2" type="Sprite2D" parent="." unique_id=897992990]
+position = Vector2(181.75003, 429.25977)
+scale = Vector2(1.3429617, 1.3429618)
+texture = ExtResource("7_5h207")
 
 [connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_bater_ponto"]]
 

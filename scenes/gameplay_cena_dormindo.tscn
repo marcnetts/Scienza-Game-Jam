@@ -63,7 +63,7 @@ tempo_de_jogo = 0.0
 relogio_hora = 6
 segundos_mudar_horario = 0.0
 
-[node name="ScienzaJamCenaSalao" type="Sprite2D" parent="." unique_id=335129010]
+[node name="Background" type="Sprite2D" parent="." unique_id=335129010]
 position = Vector2(576.00006, 325.00003)
 scale = Vector2(0.96875006, 0.9687501)
 texture = ExtResource("2_o2t5d")
