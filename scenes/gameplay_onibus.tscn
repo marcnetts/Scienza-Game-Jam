@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_ghfb8"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_5h207"]
 [ext_resource type="Script" uid="uid://8c5rfqdt2go6" path="res://scripts/camera_tremida.gd" id="5_7frf5"]
+[ext_resource type="Texture2D" uid="uid://cukng203ws63d" path="res://assets/icone_questao.png" id="5_ghfb8"]
 
 [sub_resource type="Animation" id="Animation_7frf5"]
 length = 0.001
@@ -134,6 +135,10 @@ tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Sol no meio da semana?"
 sempre_selecionavel = true
+
+[node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel3" index="0" unique_id=277402732]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_ghfb8")
 
 [node name="CameraTremida" type="Camera2D" parent="." unique_id=1570109313]
 position = Vector2(574.141, 322)

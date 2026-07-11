@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ho1gsbd0sgfa" path="res://assets/cenario cozinha 2.png" id="2_r4jrb"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_fxd4g"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_f5tvd"]
+[ext_resource type="Texture2D" uid="uid://cukng203ws63d" path="res://assets/icone_questao.png" id="5_fxd4g"]
 [ext_resource type="Texture2D" uid="uid://damxydfeq6fjs" path="res://icon.svg" id="5_r4jrb"]
 [ext_resource type="Script" uid="uid://ba17rstjahcl3" path="res://scripts/gameplay_add_almoco.gd" id="5_rqo6s"]
 
@@ -262,12 +263,20 @@ segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Sol forte da tarde."
 sempre_selecionavel = true
 
+[node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel3" index="0" unique_id=277402732]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_fxd4g")
+
 [node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=181426964 instance=ExtResource("4_f5tvd")]
 position = Vector2(936, 199)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Um dia tenho uma cozinha planejada."
 sempre_selecionavel = true
+
+[node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel4" index="0" unique_id=277402732]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_fxd4g")
 
 [node name="ButtonAlmoco" type="Button" parent="ItensSempreSelecionaveis" unique_id=1064642712]
 offset_left = 790.0
@@ -298,3 +307,7 @@ botao_almoco = NodePath("../ItensSempreSelecionaveis/ButtonAlmoco")
 [connection signal="timeout" from="TimerRelogio" to="." method="_on_timer_relogio_timeout"]
 [connection signal="tarefa_concluida" from="ItensSempreSelecionaveis/ItemSelecionavel" to="GameplayAdicional" method="_on_item_selecionavel_tarefa_concluida"]
 [connection signal="pressed" from="ItensSempreSelecionaveis/ButtonAlmoco" to="GameplayAdicional" method="_on_button_almoco_pressed"]
+
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel"]
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel3"]
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel4"]

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ck8kewedmpkex" path="res://assets/cena onibus luzes.png" id="3_mgbhg"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_1quhb"]
 [ext_resource type="Script" uid="uid://8c5rfqdt2go6" path="res://scripts/camera_tremida.gd" id="5_mgbhg"]
+[ext_resource type="Texture2D" uid="uid://cukng203ws63d" path="res://assets/icone_questao.png" id="8_mgbhg"]
 
 [sub_resource type="Animation" id="Animation_7frf5"]
 length = 0.001
@@ -139,14 +140,19 @@ position = Vector2(216.81769, 490.41705)
 
 [node name="ItemSelecionavel" parent="ItensSempreSelecionaveis" unique_id=1860087334 instance=ExtResource("4_1quhb")]
 z_index = 3
-position = Vector2(340.26556, 546.3275)
+position = Vector2(541.2466, 238.86649)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Algumas mensagens do meu filho..."
 sempre_selecionavel = true
 
+[node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel" index="0" unique_id=277402732]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_mgbhg")
+
 [node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_1quhb")]
-position = Vector2(547.217, 227.05598)
+z_index = 3
+position = Vector2(327.602, 562.468)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "O tempo passa rápido."
@@ -167,3 +173,6 @@ energy = 0.35
 max_distance = 84.0
 
 [connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_sala_noite"]]
+
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel"]
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel3"]

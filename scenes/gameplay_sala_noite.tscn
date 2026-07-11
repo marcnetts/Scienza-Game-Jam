@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://g76ryorshe0b" path="res://assets/cena casa noite.jpg" id="2_qspvo"]
 [ext_resource type="PackedScene" uid="uid://3pp2wwiu5hox" path="res://scenes/jogador.tscn" id="3_8qk8r"]
 [ext_resource type="PackedScene" uid="uid://ccwqjo1ryq2hp" path="res://scenes/item_selecionavel.tscn" id="4_efu6i"]
+[ext_resource type="Texture2D" uid="uid://cukng203ws63d" path="res://assets/icone_questao.png" id="5_dtw04"]
 
 [sub_resource type="Animation" id="Animation_7frf5"]
 length = 0.001
@@ -119,12 +120,20 @@ segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Cama comfortável agora..."
 sempre_selecionavel = true
 
+[node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel" index="0" unique_id=277402732]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_dtw04")
+
 [node name="ItemSelecionavel3" parent="ItensSempreSelecionaveis" unique_id=350136880 instance=ExtResource("4_efu6i")]
 position = Vector2(456, 347)
 tempo_limpeza = 0.0
 segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Sem tempo para ver TV."
 sempre_selecionavel = true
+
+[node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel3" index="0" unique_id=277402732]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_dtw04")
 
 [node name="ItemSelecionavel4" parent="ItensSempreSelecionaveis" unique_id=1520368745 instance=ExtResource("4_efu6i")]
 position = Vector2(846, 555)
@@ -133,6 +142,10 @@ segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "Vou jantar antes de dormir."
 sempre_selecionavel = true
 
+[node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel4" index="0" unique_id=277402732]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_dtw04")
+
 [node name="ItemSelecionavel5" parent="ItensSempreSelecionaveis" unique_id=866357137 instance=ExtResource("4_efu6i")]
 position = Vector2(78, 445)
 tempo_limpeza = 0.0
@@ -140,7 +153,16 @@ segundos_timer_item_nao_selectionavel = 0.0
 fala_personagem = "A limpeza fica para outro dia."
 sempre_selecionavel = true
 
+[node name="Sprite2D" parent="ItensSempreSelecionaveis/ItemSelecionavel5" index="0" unique_id=277402732]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_dtw04")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=328282900]
 libraries/ = SubResource("AnimationLibrary_clggk")
 
 [connection signal="pressed" from="Interface/ButtonProximaCena" to="." method="_on_button_proxima_cena_pressed" binds= ["gameplay_cena_dormindo"]]
+
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel"]
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel3"]
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel4"]
+[editable path="ItensSempreSelecionaveis/ItemSelecionavel5"]
